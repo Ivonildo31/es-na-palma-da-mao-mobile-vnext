@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, Loading } from 'ionic-angular';
+import { IonicPage, Loading, AlertController} from 'ionic-angular';
 import { AirService } from '../../provider/services';
 import { Mapa } from '../../model/mapa.model';
 import { AirApiService } from '../../provider/airApiService';
@@ -20,20 +20,22 @@ export class AirPage {
   loading: Loading;
   map: any;
   @ViewChild('map') mapContainer: ElementRef;
-  constructor(private service: AirService, private apiService: AirApiService) {
-   
+  constructor(private service: AirService, 
+              private apiService: AirApiService,
+              private alertCtrl:AlertController) {
+
 
   }
 
   ionViewDidEnter() {
     this.allDataQualityAir();
-    setTimeout(()=>{
+    setTimeout(() => {
       this.loadMapa();
-    },5000);
-    
-    
+    }, 5000);
+
+
   }
-  
+
   /**
    * recebe um id e puxa os dados referentes 
    */
@@ -57,6 +59,23 @@ export class AirPage {
   /**
    * 
    */
+  allAir(){
+    return "ivonido";
+  }
+  
+  modal() {
+   
+      let alert = this.alertCtrl.create({
+        title: 'Escala do Índice de Qualidade do Ar (IQAr)</b><br><b>Faixa de Concentração* do Poluente',
+        message: ''+this.allAir(),
+        buttons: [
+          {
+            text: 'Entendi',
+            role: 'cancel'
+          } ]
+      });
+      return alert.present();
+    }
   
   /**
    * 
@@ -67,10 +86,10 @@ export class AirPage {
     leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-    
-    this.Air.map(item =>{
-      let mark = leaflet.marker([item.Latitude,item.Longitude]).addTo(map);
-      mark.bindPopup(''+item.Iqa, {closeOnClick: false, autoClose: false}).openPopup();
+
+    this.Air.map(item => {
+      let mark = leaflet.marker([item.Latitude, item.Longitude]).addTo(map);
+      mark.bindPopup('' + item.Iqa, { closeOnClick: false, autoClose: false }).openPopup();
       map.addLayer(mark);
     });
   }

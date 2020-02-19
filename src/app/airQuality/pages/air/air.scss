@@ -1,8 +1,39 @@
 page-air {
+    @media screen and (max-width: 361px){
+nav-title .content p {
+    font-size: 20px;
+}
+    }
+    
    a{
         text-align: center;
         color: black;
         height: 50px;
     }
+    .sec{
+        position: absolute;
+        z-index: 1000;
+        bottom: 0;  
+        right: 0; 
+    }
+    .btn{
+        position: absolute;
+        z-index: 1000;
+        bottom: 0;  
+        right: 0; 
+    }
+    
+    .imagem{
+        background-image:url("../assets/imgs/icon-escala.png") ;
+        background-repeat: no-repeat;
+        width: 1px;
+        height: 22px;
+        background-size: contain;
+    }
+    
    
+}
+.leaflet-touch .leaflet-control-attribution, .leaflet-touch .leaflet-control-layers, .leaflet-touch .leaflet-bar {
+   
+    display: none;
 }
