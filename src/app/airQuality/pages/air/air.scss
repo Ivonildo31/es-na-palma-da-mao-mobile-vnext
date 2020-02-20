@@ -1,4 +1,7 @@
 page-air {
+    .scroll-content{
+        padding: 0px !important;
+      }
     @media screen and (max-width: 361px){
 nav-title .content p {
     font-size: 20px;
@@ -30,6 +33,20 @@ nav-title .content p {
         height: 22px;
         background-size: contain;
     }
+    .header-app-qualidadear {
+        background-color: #1B89C6;
+        color: #fff;
+        border-bottom: 3px solid #0d6392;
+    }
+    
+    .header-app-qualidadear h3{
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: 0;
+    }
+    
+    
+    
     
    
 }

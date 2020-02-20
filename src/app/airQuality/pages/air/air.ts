@@ -1,5 +1,5 @@
 import { Component, ViewChild, ElementRef } from '@angular/core';
-import { IonicPage, Loading, AlertController} from 'ionic-angular';
+import { IonicPage, Loading, NavController} from 'ionic-angular';
 import { AirService } from '../../provider/services';
 import { Mapa } from '../../model/mapa.model';
 import { AirApiService } from '../../provider/airApiService';
@@ -22,7 +22,7 @@ export class AirPage {
   @ViewChild('map') mapContainer: ElementRef;
   constructor(private service: AirService, 
               private apiService: AirApiService,
-              private alertCtrl:AlertController) {
+              private navCtrl: NavController) {
 
 
   }
@@ -59,23 +59,9 @@ export class AirPage {
   /**
    * 
    */
-  allAir(){
-    return "ivonido";
+  modal(){
+    this.navCtrl.push('QualityAirPage');
   }
-  
-  modal() {
-   
-      let alert = this.alertCtrl.create({
-        title: 'Escala do Índice de Qualidade do Ar (IQAr)</b><br><b>Faixa de Concentração* do Poluente',
-        message: ''+this.allAir(),
-        buttons: [
-          {
-            text: 'Entendi',
-            role: 'cancel'
-          } ]
-      });
-      return alert.present();
-    }
   
   /**
    * 
