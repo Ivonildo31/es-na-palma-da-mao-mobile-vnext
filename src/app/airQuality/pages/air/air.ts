@@ -63,19 +63,30 @@ export class AirPage {
     this.navCtrl.push('QualityAirPage');
   }
   
+  
   /**
    * 
    */
+  
+/**
+ * 
+ */
   loadMapa() {
     let map = leaflet.map('map').setView([-20.2602057, -40.3405489], 11);
 
     leaflet.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(map);
-
+  //   let numberIcon = leaflet.divIcon({
+  //     className: "number-icon",
+  //     iconSize: [48, 60],
+  //     iconAnchor: [19, 60],
+  //     popupAnchor: [3, -40]
+  
+  // });
     this.Air.map(item => {
       let mark = leaflet.marker([item.Latitude, item.Longitude]).addTo(map);
-      mark.bindPopup('' + item.Iqa, { closeOnClick: false, autoClose: false }).openPopup();
+      mark.bindPopup('' + item.Iqa.toFixed(0), { closeOnClick: false, autoClose: false }).openPopup();
       map.addLayer(mark);
     });
   }

@@ -29,6 +29,9 @@ page-quality-air {
         color: #fff;
         border-bottom: 3px solid #0d6392;
     }
+    element.style {
+        width: 0 !important;
+    }
     table {
         
         width: 100%;
@@ -175,15 +178,23 @@ page-quality-air {
         background-color: #30cc09;
         border: 1px solid #55a042;
         width: 1%;
-        height: 20px;
+        height: 40px;
         align-items: center;
         text-align: center;
+        padding-top: 5px;
+        font-size: large;
     }
     
     td.faixa-moderada,
     .iqar-value-popup.faixa-color-moderada,
     .modal-poluentes-class .estacao-max-value.faixa-moderada {
         background-color: #ffdb2b;
+        width: 1%;
+        height: 40px;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    font-size: large;
     }
     
     td.faixa-ruim,
@@ -191,6 +202,12 @@ page-quality-air {
     .modal-poluentes-class .estacao-max-value.faixa-ruim {
         background-color: #f88c10;
         border: 1px solid #a06929;
+        width: 1%;
+        height: 40px;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    font-size: large;
     }
     
     td.faixa-muitoruim,
@@ -200,6 +217,12 @@ page-quality-air {
         background-color: #ec3e3e;
         border: 1px solid #b13e3e;
         color: white;
+        width: 1%;
+        height: 40px;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    font-size: large;
     }
     
     td.faixa-pessima,
@@ -208,6 +231,12 @@ page-quality-air {
         background-color: #601686;
         border: 1px solid #601686;
         color: white;
+        width: 1%;
+        height: 40px;
+    align-items: center;
+    text-align: center;
+    padding-top: 5px;
+    font-size: large;
     }
     
     .modal-poluentes-class .estacao-faixa {
